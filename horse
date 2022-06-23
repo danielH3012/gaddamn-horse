@@ -1,0 +1,40 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution {
+
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt();
+        int jawaban = 1000000;
+        int[] arr = new int[N];
+        for (int i = 0; i < N; i++) {
+            int pi = in.nextInt();
+            arr[i] = pi;
+        }
+      for(int i = 0; i < N; i++){
+          for(int j = 0; j < N; j++){
+              int selisih = arr[i] - arr[j];
+              if(selisih < 0 ){
+                 continue; 
+              }else if(i == j){
+                  break;
+                  }else if(selisih < jawaban){
+                 jawaban = selisih;
+              } else{
+                  continue;
+              }
+      }
+        // Write an answer using System.out.println()
+        // To debug: System.err.println("Debug messages...");
+
+      
+    }
+       System.out.println(jawaban);
+    } }
